@@ -1,16 +1,11 @@
 import { useState, useRef } from 'react';
 import ChatButton from '../chatbot/ChatButton';
 import './Dashboard.css';
-import Header from '../dashboard/Header';
 import Calendar from '../dashboard/Calendar'
 
 
-// Dashboard component is updated with onChatOpen prop
-interface DashboardProps {
-  onChatOpen: () => void;
-}
 
-const Dashboard = ({ onChatOpen }: DashboardProps) => {
+const Dashboard = () => {
   const [selectedDate, setSelectedDate] = useState<Date>(new Date());
   const [view, setView] = useState<'day' | 'week' | 'month'>('day');
   const contentRef = useRef<HTMLDivElement>(null);
@@ -64,7 +59,6 @@ const Dashboard = ({ onChatOpen }: DashboardProps) => {
   
   return (
     <div className="dashboard">
-      <Header />
       
       {/* Main content */}
       <div className="dashboard-content" ref={contentRef}>
@@ -85,7 +79,7 @@ const Dashboard = ({ onChatOpen }: DashboardProps) => {
       </div>
       
       {/* Chatbot - pass the onChatOpen prop */}
-      <ChatButton onOpenChat={onChatOpen} />
+      <ChatButton />
     </div>
   );
 };

@@ -1,12 +1,12 @@
+import { FiMenu } from "react-icons/fi";
 import Logo from "../icons/Logo";
-import MenuIcon from "../icons/MenuIcon";
 
 const Header = () => {
   return (
     <header className="app-header">
       <div className="header-left">
         <button className="menu-button">
-          <MenuIcon />
+          <FiMenu />
         </button>
       </div>
       

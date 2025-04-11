@@ -1,10 +1,7 @@
 import { useState, useEffect } from 'react';
 import ChatWindow from './ChatWindow';
 import './ChatBot.css';
-
-interface ChatButtonProps {
-  onOpenChat?: () => void; // Optional prop for full-page chat navigation
-}
+import { useNavigate } from 'react-router-dom';
 
 // To store message data globally
 export interface ChatMessage {
@@ -18,15 +15,16 @@ export interface ChatMessage {
 // In a real application, these should be stored in a database
 let chatMessages: ChatMessage[] = [];
 
-const ChatButton = ({ onOpenChat }: ChatButtonProps) => {
+const ChatButton = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [hasUnread, setHasUnread] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const [lastMessage, setLastMessage] = useState<string | null>(null);
+  const navigate=useNavigate();
 
   // Function to navigate to full-page chat
   const handleOpenFullChat = () => {
-    if (onOpenChat) {
+    
       // Save the last user message
       if (lastMessage) {
         const newMessage: ChatMessage = {
@@ -46,8 +44,7 @@ const ChatButton = ({ onOpenChat }: ChatButtonProps) => {
         
         chatMessages = [...chatMessages, newMessage, aiResponse];
       }
-      onOpenChat();
-    }
+      navigate('/chat')
   };
 
   // Toggle chat window visibility

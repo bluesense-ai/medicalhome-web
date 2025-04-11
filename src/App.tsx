@@ -1,16 +1,20 @@
-import { useState } from 'react';
 import Dashboard from './components/dashboard/Dashboard';
 import ChatPage from './components/chatbot/ChatPage';
 import './App.css';
+import { Route, Routes } from 'react-router-dom';
+import Header from './components/dashboard/Header';
 
 function App() {
-  // Basit bir geçiş için - gerçek projelerde router kullanılmalı
-  const [currentPage, setCurrentPage] = useState<'dashboard' | 'chat'>('dashboard');
 
   return (
     <div className="app">
-      {currentPage === 'dashboard' && <Dashboard onChatOpen={() => setCurrentPage('chat')} />}
-      {currentPage === 'chat' && <ChatPage onBack={() => setCurrentPage('dashboard')} />}
+
+        <Header />
+
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+          <Route path='/chat' element={<ChatPage />} />
+        </Routes>
     </div>
   );
 }

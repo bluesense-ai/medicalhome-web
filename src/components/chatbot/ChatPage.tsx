@@ -1,44 +1,8 @@
-import React, { useState, useRef, ReactNode } from 'react';
-import { FiMenu, FiSearch, FiBell, FiCalendar, FiUpload, FiMic, FiMaximize2, FiMoreVertical, FiEdit, FiMessageSquare, FiHome, FiUser, FiFileText, FiSettings, FiHelpCircle, FiLogOut, FiPlus } from 'react-icons/fi';
+import React, { useState,  ReactNode } from 'react';
+import { FiSearch,  FiCalendar, FiUpload, FiMic, FiMaximize2, FiMoreVertical, FiEdit, FiMessageSquare, FiHome, FiUser, FiFileText, FiSettings, FiHelpCircle, FiLogOut, FiPlus } from 'react-icons/fi';
 import './ChatPage.css';
+import { useNavigate } from 'react-router-dom';
 
-// Common interfaces and types
-interface ChatPageProps {
-  onBack: () => void;
-}
-
-// Header Component
-const Header = ({ onBack }: { onBack: () => void }) => {
-  return (
-    <header className="app-header">
-      <div className="header-left">
-        <button className="menu-button">
-          <FiMenu />
-        </button>
-      </div>
-      
-      <div className="header-center">
-        <div className="logo-container">
-          <img 
-            src="/logo.svg" 
-            alt="Medical Home Logo" 
-            className="header-logo"
-            onError={(e) => {
-              const target = e.target as HTMLImageElement;
-              target.src = 'https://placehold.co/150x50?text=Medical+Home';
-            }}
-          />
-        </div>
-      </div>
-      
-      <div className="header-right">
-        <div className="user-avatar">
-          D
-        </div>
-      </div>
-    </header>
-  );
-};
 
 // Type definitions
 interface SidebarItemProps {
@@ -73,7 +37,11 @@ const SidebarItem: React.FC<SidebarItemProps> = ({ icon, text, isActive, onClick
 };
 
 // Sidebar component
-const Sidebar: React.FC<{onBack: () => void}> = ({ onBack }) => {
+const Sidebar = () => {
+  
+  const navigate=useNavigate()
+
+
   return (
     <div className="sidebar">
       <div className="sidebar-header">
@@ -99,7 +67,7 @@ const Sidebar: React.FC<{onBack: () => void}> = ({ onBack }) => {
       </nav>
       
       <div className="sidebar-footer">
-        <button className="back-button" title="Back to Dashboard" onClick={onBack}>
+        <button className="back-button" title="Back to Dashboard" onClick={()=>navigate('/')}>
           <FiLogOut />
         </button>
       </div>
@@ -278,12 +246,15 @@ const ActivityCard: React.FC<{time: string, title: string, description: string, 
 
 // Appointments Panel
 const AppointmentsPanel: React.FC = () => {
+
+  const navigate= useNavigate();
+
   return (
     <div className="appointments-panel">
       <div className="panel-header">
         <div className="date-display">
           <h2>Today</h2>
-          <button className="calendar-button">
+          <button className="calendar-button" onClick={() => {navigate('/')}}>
             <FiCalendar />
           </button>
         </div>
@@ -341,7 +312,7 @@ const AppointmentsPanel: React.FC = () => {
 };
 
 // Main Chat Page Component
-const ChatPage = ({ onBack }: ChatPageProps) => {
+const ChatPage = () => {
   const [messages, setMessages] = useState<MessageProps[]>([
     {
       content: "Hello, I am Durabilis AI. How can I help you today?",
@@ -384,9 +355,9 @@ const ChatPage = ({ onBack }: ChatPageProps) => {
 
   return (
     <div className="chat-page">
-      <Header onBack={onBack} />
+
       <div className="chat-page-content">
-        <Sidebar onBack={onBack} />
+        <Sidebar />
         <div className="chat-main-container">
           <div className="chat-content">
             <div className="chat-content-header">

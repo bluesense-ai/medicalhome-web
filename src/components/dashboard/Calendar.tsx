@@ -1,6 +1,4 @@
-import CalendarIcon from "../icons/CalendarIcon";
-import BackArrow from "../icons/BackArrow";
-import NextArrow from "../icons/NextArrow";
+import { FiCalendar, FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 
 const Calendar = ({ selectedDate, view, handleToday, handlePrevious, handleNext, handleView ,formatDate }: { 
@@ -45,7 +43,7 @@ const Calendar = ({ selectedDate, view, handleToday, handlePrevious, handleNext,
       <div className="calendar-nav">
         
           <button  onClick={handleToday} className="today-button" >
-            <CalendarIcon />
+            <FiCalendar size={20} />
             <span className="text-sm">Today</span>
           </button>
           
@@ -55,7 +53,7 @@ const Calendar = ({ selectedDate, view, handleToday, handlePrevious, handleNext,
               onClick={handlePrevious}
               className="nav-arrow prev"
             >
-              <BackArrow />
+              <FiChevronLeft />
             </button>
             
             <h2 className="current-date">{formatDate(selectedDate)}</h2>
@@ -64,7 +62,7 @@ const Calendar = ({ selectedDate, view, handleToday, handlePrevious, handleNext,
               onClick={handleNext}
               className="nav-arrow next"
             >
-              <NextArrow />
+              <FiChevronRight />
             </button>
           </div>
         
