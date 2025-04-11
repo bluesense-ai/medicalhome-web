@@ -25,7 +25,10 @@ const Calendar = ({ selectedDate, view, handleToday, handlePrevious, handleNext,
     { label: '10:00 AM', time: '10:00' },
     { label: '10:30 AM', time: '10:30' },
     { label: '11:00 PM', time: '11:00' },
-    { label: '11:30 PM', time: '11:30' }
+    { label: '13:00 PM', time: '13:00' },
+    { label: '13:30 PM', time: '13:30' },
+    { label: '14:00 PM', time: '14:00' },
+    { label: '14:30 PM', time: '14:30' }
   ];
   
   // Group appointments by exact start time for rendering
@@ -38,7 +41,7 @@ const Calendar = ({ selectedDate, view, handleToday, handlePrevious, handleNext,
   });
 
   return (
-    <div className="calendar-wrapper">
+    <div className="calendar-wrapper ">
       {/* Calendar Navigation */}
       <div className="calendar-nav">
         
@@ -98,41 +101,37 @@ const Calendar = ({ selectedDate, view, handleToday, handlePrevious, handleNext,
           {timeSlots.map((slot, index) => (
             <div key={index} className="time-slot">
               <div className="time-label">{slot.label}</div>
-              <div className="time-events">
+              <div className="time-events" >
                 {/* Special separator line positioned correctly */}
                 {slot.time === '10:30' && (
                   <div className="separator-line"></div>
                 )}
                 
-                <div className="event-container">
+                <div className="event-container ">
                   {/* Filter appointments that *start* at this specific time slot */}
-                  {appointments
-                    .filter(appointment => appointment.time === slot.time)
-                    .map(appointment => (
-                      <div 
-                        key={appointment.id} 
-                        className={`event ${appointment.type === 'walk-in' ? 'walk-in' : ''}`}
-                      >
+                  {appointments.filter(appointment => appointment.time === slot.time).map(appointment => (          
+                      <div  key={appointment.id}  className={`event ${appointment.type === 'walk-in' ? 'walk-in' : ''}`} >
                         {appointment.type === 'walk-in' ? (
                           <div className="event-meta"> 
-                            <div className="event-details-group"> {/* Group label, patient, ID */} 
+                             
                               <span className="walk-in-label">Walk-in</span>
+                            <div className="event-details-group">
                               <span className="event-patient">{appointment.patient}</span>
                               {appointment.patientId && <span className="event-id">{appointment.patientId}</span>}
+                              <span className="event-time">{appointment.time} - {appointment.endTime}</span>
                             </div>
-                            <span className="event-time">{appointment.time} - {appointment.endTime}</span>
+                            
                           </div>
                         ) : (
-                          <>
-                            <div className="event-title">{appointment.title}</div>
-                            <div className="event-meta">
-                               <div> {/* Group patient and ID */} 
-                                <span className="event-patient">{appointment.patient}</span>
+                          <div className="event-meta">                         
+                            <div className="event-title">{appointment.title}</div> 
+                            <div className="event-details-group"> {/* Group patient and ID */} 
+                              <span className="event-patient">{appointment.patient}</span>
                                 {appointment.patientId && <span className="event-id">{appointment.patientId}</span>}
-                               </div>
-                               <span className="event-time">{appointment.time} - {appointment.endTime}</span>
+                                <span className="event-time">{appointment.time} - {appointment.endTime}</span> 
                             </div>
-                          </>
+                                          
+                          </div>
                         )}
                       </div>
                   ))}

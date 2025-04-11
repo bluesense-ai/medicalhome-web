@@ -2,6 +2,7 @@ import { useState, useRef } from 'react';
 import ChatButton from '../chatbot/ChatButton';
 import './Dashboard.css';
 import Calendar from '../dashboard/Calendar'
+import Header from './Header';
 
 
 
@@ -60,6 +61,7 @@ const Dashboard = () => {
   return (
     <div className="dashboard">
       
+      <Header/>
       {/* Main content */}
       <div className="dashboard-content" ref={contentRef}>
         {/* Calendar based on view */}

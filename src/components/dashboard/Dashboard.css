@@ -1,13 +1,15 @@
 /* Dashboard.css */
+
 .dashboard {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  height: 100vh;
   background-color: #f8f8f8;
   font-family: 'Roboto', sans-serif;
   width: 100%;
   margin: 0;
   box-shadow: none;
+  
 }
 
 /* Header styles */
@@ -68,6 +70,9 @@
 .calendar-wrapper {
   width: calc(100% - 120px);
   margin: 20px 60px 0 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 /* Calendar Navigation */
@@ -80,8 +85,7 @@
   color: white;
   width: 100%;
   box-sizing: border-box;
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
+  border-radius: 8px;
 }
 
 .nav-left {
@@ -211,8 +215,8 @@
   flex-direction: column;
   width: 100%;
   background-color: #fff;
-  border-bottom-left-radius: 4px;
-  border-bottom-right-radius: 4px;
+  border-radius: 8px;
+  margin-bottom: 12px;
 }
 
 /* All Day Row */
@@ -220,6 +224,7 @@
   display: flex;
   width: 100%;
   border-bottom: 1px solid #d0e4f5;
+  border-radius: inherit;
 }
 
 .all-day-label {
@@ -230,12 +235,14 @@
   color: #005275;
   font-weight: 500;
   border-right: 1px solid #d0e4f5;
+  border-radius: inherit;
 }
 
 .all-day-events {
   flex: 1;
-  background-color: #f0f7fc;
+  background-color: #3499D640;
   padding: 10px 0;
+  border-radius: inherit;
 }
 
 /* Time Grid */
@@ -243,6 +250,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
+  border-radius: 8px;
 }
 
 /* Time Slot */
@@ -250,8 +258,9 @@
   display: flex;
   width: 100%;
   min-height: 60px;
-  border-bottom: 1px solid #d0e4f5;
+  border-bottom: 1px solid #F2F8FF;
   position: relative;
+  border: 1.5px solid #3499D640;
 }
 
 .time-slot:last-child {
@@ -262,7 +271,8 @@
   width: 115px;
   min-width: 115px;
   display: flex;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
   padding: 12px 24px;
   background-color: #e8f2f9;
   color: #005275;
@@ -281,22 +291,34 @@
 /* Events Styling */
 .event-container {
   display: flex;
+  flex-direction: column;
+  gap:2px;
   width: 100%;
+  background-color: #3499D640;
   padding: 0;
 }
 
+.last-item{
+  border-bottom-right-radius: 8px;
+}
+
+.last-slot{
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
 .event {
-  background-color: #005275;
+  background-color: #004F62;
   color: white;
   padding: 10px 15px;
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   flex-basis: 0;
   flex-grow: 1;
   min-width: 150px;
   border-right: 1px solid rgba(255, 255, 255, 0.2);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 }
 
 .event:last-child {
@@ -304,13 +326,12 @@
 }
 
 .event.walk-in {
-  background-color: #33C213;
+  background-color: #247401;
 }
 
 .event-title {
   font-size: 14px;
   font-weight: 500;
-  margin-bottom: 5px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -319,6 +340,7 @@
 .event-meta {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   align-items: flex-end;
   width: 100%;
 }
@@ -329,7 +351,7 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  margin-right: 5px;
+  margin-right: 4px;
 }
 
 .event-id {
@@ -362,10 +384,9 @@
 .walk-in-label {
   display: inline-block;
   padding: 2px 6px;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 500;
-  background-color: white;
-  color: #33C213;
+  color: white;
   border-radius: 3px;
   margin-right: 8px;
 }
@@ -377,6 +398,12 @@
 .event.walk-in .event-details-group {
   display: flex;
   align-items: center;
+  
+}
+
+.event-details-group{
+  display: flex;
+  gap:16px
 }
 
 .event.walk-in .event-patient {

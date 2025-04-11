@@ -1,6 +1,12 @@
 /* App.css */
+
+body{
+  font-family: 'Roboto', sans-serif;
+}
+
 #root {
   width: 100%;
+  
 }
 
 .dashboard-container {

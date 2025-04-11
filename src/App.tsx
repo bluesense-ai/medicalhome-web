@@ -2,14 +2,12 @@ import Dashboard from './components/dashboard/Dashboard';
 import ChatPage from './components/chatbot/ChatPage';
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
-import Header from './components/dashboard/Header';
+
 
 function App() {
 
   return (
-    <div className="app">
-
-        <Header />
+    <div className="app font-roboto">
 
         <Routes>
           <Route path="/" element={<Dashboard />} />

@@ -2,6 +2,7 @@ import React, { useState,  ReactNode } from 'react';
 import { FiSearch,  FiCalendar, FiUpload, FiMic, FiMaximize2, FiMoreVertical, FiEdit, FiMessageSquare, FiHome, FiUser, FiFileText, FiSettings, FiHelpCircle, FiLogOut, FiPlus } from 'react-icons/fi';
 import './ChatPage.css';
 import { useNavigate } from 'react-router-dom';
+import Header from '../dashboard/Header';
 
 
 // Type definitions
@@ -355,6 +356,8 @@ const ChatPage = () => {
 
   return (
     <div className="chat-page">
+
+      <Header/>
 
       <div className="chat-page-content">
         <Sidebar />
