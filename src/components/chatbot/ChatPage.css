@@ -1,0 +1,1104 @@
+/* ChatPage.css */
+.chat-page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #f5f7fa;
+  font-size: 10px;
+}
+
+/* Header styles (same as Dashboard) */
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background-color: #fff;
+  border-bottom: 1px solid #e0e0e0;
+  height: 60px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  position: relative;
+  z-index: 10;
+}
+
+.header-left,
+.header-right {
+  display: flex;
+  align-items: center;
+  width: 60px;
+}
+
+.header-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+}
+
+.header-logo {
+  height: 40px;
+  object-fit: contain;
+}
+
+.menu-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.menu-button svg {
+  width: 24px;
+  height: 24px;
+  color: #333;
+}
+
+.menu-button:hover {
+  background-color: #f0f0f0;
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  background-color: #333;
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* Main content area - three column layout */
+.chat-page-content {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  padding: 24px; /* Add padding around the entire content area */
+  gap: 24px; /* Add gap between sidebar, main content, and right panel */
+  background-color: #f5f7fa; /* Ensure background color covers the gaps */
+}
+
+/* Left Sidebar Styles */
+.sidebar {
+  width: 240px;
+  display: flex;
+  flex-direction: column;
+  background-color: #004F62;
+  color: #fff;
+  overflow-y: auto;
+  flex-shrink: 0;
+  height: 100%;
+  border-radius: 8px; /* Add border-radius to sidebar */
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1); /* Optional: add subtle shadow */
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  padding: 1.5rem 1rem;
+  background-color: #004F62;
+}
+
+.sidebar-logo {
+  width: 32px;
+  height: 32px;
+  margin-right: 10px;
+}
+
+.sidebar-title {
+  font-size: 16px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: white;
+}
+
+/* New Chat Button */
+.new-chat-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background-color: #45B54C;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.new-chat-button:hover {
+  background-color: #399140;
+}
+
+.new-chat-button svg {
+  width: 14px;
+  height: 14px;
+}
+
+.sidebar-nav {
+  flex: 1;
+  padding: 1rem 0;
+}
+
+.sidebar-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  color: rgba(255, 255, 255, 0.85);
+  transition: background-color 0.2s;
+  cursor: pointer;
+  margin-bottom: 2px;
+}
+
+.nav-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.nav-item.active {
+  background-color: #45B54C; /* Green background for active item */
+  color: white;
+}
+
+.nav-icon {
+  display: flex;
+  margin-right: 12px;
+}
+
+.nav-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.nav-text {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.sidebar-separator {
+  padding: 0.75rem 1.5rem;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 500;
+  margin: 10px 0;
+}
+
+.sidebar-footer {
+  padding: 1rem;
+  margin-top: auto;
+}
+
+.back-button {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+}
+
+.back-button svg {
+  width: 24px;
+  height: 24px;
+}
+
+.back-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+/* Center Chat Content Area - Figma Style */
+.chat-main-container {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+  padding: 0; /* Remove padding, handled by chat-content-figma */
+  background-color: #f5f7fa; /* Match parent background */
+  border-radius: 8px; /* Add border-radius */
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05); /* Optional: add subtle shadow */
+}
+
+.chat-content-figma {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  padding: 24px;
+  /* background-color: #f5f7fa; No longer needed, inherited or set on parent */
+  gap: 24px;
+  /* Remove border-radius from here if added to parent */
+}
+
+/* Top Header Section */
+.top-header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0; /* Removed margin, use gap from parent */
+}
+
+.search-bar-top {
+  position: relative;
+  flex: 1;
+  margin-right: 16px; /* Increased space to notification button */
+}
+
+.search-icon-top {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  color: #aaa;
+}
+
+.search-input-top {
+  width: 100%;
+  padding: 12px 16px 12px 40px; /* Adjusted padding for height */
+  border-radius: 6px; /* Slightly smaller radius */
+  border: 1px solid #e0e0e0;
+  background-color: #fff;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.2s;
+}
+
+.search-input-top:focus {
+  border-color: #004F62;
+  box-shadow: 0 0 0 3px rgba(0, 79, 98, 0.1);
+}
+
+.notification-button {
+  background: #fff; /* White background */
+  border: 1px solid #e0e0e0; /* Add border back */
+  cursor: pointer;
+  padding: 10px; /* Adjust padding for size */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px; /* Match search bar radius */
+  transition: background-color 0.2s;
+}
+
+.notification-button:hover {
+  background-color: #f0f0f0;
+}
+
+.notification-button svg {
+  width: 20px;
+  height: 20px;
+  color: #555; /* Slightly darker icon */
+}
+
+/* Section Header */
+.section-header {
+  font-size: 1.15rem; /* Slightly smaller */
+  font-weight: 600;
+  margin-bottom: 12px; /* Reduced margin */
+  color: #000;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+/* New Chat Section */
+.new-chat-section {
+  margin-bottom: 0; /* Removed margin, use gap from parent */
+}
+
+/* Updated wrapper for input and buttons */
+.input-wrapper-with-buttons {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* Increased gap */
+}
+
+.main-chat-input-field {
+  flex: 1;
+  padding: 12px 16px; /* Adjusted padding */
+  border: none; /* Removed border as background provides contrast */
+  border-radius: 6px; /* Match search bar radius */
+  font-size: 14px;
+  outline: none;
+  background-color: #004F62;
+  transition: all 0.2s;
+  color: #fff;
+  min-height: 44px; /* Ensure minimum height */
+}
+
+.main-chat-input-field::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.main-chat-input-field:focus {
+  /* Remove focus style, rely on background */
+  box-shadow: none;
+  border: none;
+}
+
+.action-buttons-main {
+  display: flex;
+  gap: 12px; /* Match gap */
+}
+
+/* Reusing action-button styles */
+.action-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 18px; /* Adjusted padding */
+  border: none;
+  border-radius: 6px; /* Match input radius */
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  min-height: 44px; /* Match input height */
+}
+
+.speak-button {
+  background-color: #45B54C; /* Figma green */
+  color: white;
+}
+
+.speak-button:hover:not(:disabled) {
+  background-color: #399140;
+}
+
+.upload-button {
+  background-color: #45B54C; /* Figma green */
+  color: white;
+}
+
+.upload-button:hover:not(:disabled) {
+  background-color: #399140;
+}
+
+.action-button:disabled {
+  background-color: #e4e6eb;
+  color: #bcc0c4;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.action-button svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Results Section */
+.results-section {
+  background-color: #004F62;
+  color: #fff;
+  border-radius: 6px; /* Match other elements */
+  overflow: hidden;
+  margin-bottom: 0; /* Removed margin, use gap from parent */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08); /* Softer shadow */
+}
+
+.results-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px; /* Adjusted padding */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.results-header h3 {
+  margin: 0;
+  font-size: 0.9rem; /* Slightly smaller header */
+  font-weight: 600;
+}
+
+.expand-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.expand-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.expand-button svg {
+  width: 16px;
+  height: 16px;
+  color: #fff;
+}
+
+.results-content {
+  padding: 16px; /* Keep padding */
+  max-height: 250px;
+  overflow-y: auto;
+  line-height: 1.5; /* Adjusted line height */
+}
+
+.results-content p {
+  margin: 0;
+  color: #fff;
+}
+
+.results-text-formatted {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-family: 'Roboto', sans-serif; /* Apply Roboto font */
+  font-size: 10pt; /* Apply 10pt font size */
+  font-weight: 400; /* Regular weight */
+  color: #fff;
+  margin: 0;
+}
+
+/* Recent Chats Section (Grid) */
+.recent-chats-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  margin-bottom: 0; /* Removed margin */
+}
+
+.conversations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Slightly smaller min width */
+  gap: 20px; /* Adjusted gap */
+  overflow-y: auto;
+  flex: 1;
+  padding-bottom: 1rem;
+}
+
+/* Conversation Card */
+.conversation-card {
+  border: none; /* Remove border */
+  border-radius: 6px; /* Match other elements */
+  overflow: hidden;
+  background-color: #004F62;
+  color: #fff;
+  transition: all 0.2s;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08); /* Softer shadow */
+  height: auto; /* Let content determine height */
+  display: flex;
+  flex-direction: column;
+  min-height: 170px; /* Adjusted min height */
+}
+
+.conversation-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.conversation-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 14px; /* Fine-tune padding */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  flex-shrink: 0; /* Prevent header from shrinking */
+}
+
+.conversation-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.8);
+  white-space: nowrap; /* Prevent wrapping */
+}
+
+.conversation-info span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.conversation-info svg {
+  width: 14px;
+  height: 14px;
+  color: rgba(255, 255, 255, 0.8);
+  flex-shrink: 0; /* Prevent icons from shrinking */
+}
+
+.more-options-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+  flex-shrink: 0; /* Prevent button from shrinking */
+}
+
+.more-options-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.more-options-button svg {
+  width: 16px;
+  height: 16px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.conversation-title {
+  font-size: 13px; /* Slightly smaller */
+  font-weight: 600;
+  color: #fff;
+  margin: 0 0 8px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.conversation-content {
+  padding: 14px; /* Fine-tune padding */
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.conversation-content p {
+  margin: 0;
+  font-size: 12px; /* Slightly smaller */
+  line-height: 1.4; /* Adjust line height */
+  color: rgba(255, 255, 255, 0.9);
+  /* Adjusted text overflow for better display */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* Show up to 4 lines */
+  -webkit-box-orient: vertical;
+  flex-grow: 1; /* Allow paragraph to take space */
+}
+
+.conversation-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 14px; /* Fine-tune padding */
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  flex-shrink: 0; /* Prevent footer from shrinking */
+}
+
+.conversation-tag {
+  padding: 3px 6px; /* Slightly smaller padding */
+  border-radius: 4px;
+  font-size: 10px; /* Slightly smaller font */
+  font-weight: 500;
+  color: #333; /* Default text color, overridden by specific styles */
+  display: inline-flex; /* Use flex for icon alignment */
+  align-items: center;
+  gap: 4px;
+}
+
+/* Tag colors based on Figma - Assuming Tag #1 Yellow, #2 Green, #3 Red */
+.conversation-tag[style*="background-color: #FFCA28"] { /* Yellow */
+  color: #5f4700; /* Darker text for yellow */
+}
+
+.conversation-tag[style*="background-color: #66BB6A"] { /* Green */
+  color: #fff; 
+}
+
+.conversation-tag[style*="background-color: #EF5350"] { /* Red */
+  color: #fff;
+}
+
+.tag-edit-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.tag-edit-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.tag-edit-button svg {
+  width: 14px;
+  height: 14px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Placeholder Text Style */
+.placeholder-text {
+  color: #aaa; /* Lighter color for placeholders */
+  font-style: italic;
+}
+
+.results-content .placeholder-text {
+  color: rgba(255, 255, 255, 0.7); /* Lighter white for results placeholder */
+}
+
+.recent-chats-section .placeholder-text {
+  color: #666; /* Placeholder for empty recent chats */
+  padding: 1rem 0;
+}
+
+/* Appointments Panel */
+.appointments-panel {
+  width: 300px;
+  padding: 24px;
+  background-color: #004F62;
+  border-radius: 8px; /* Add border-radius */
+  margin: 0;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1); /* Optional: add subtle shadow */
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  flex-shrink: 0;
+  color: white;
+  height: 100%; /* Ensure panel takes full height within the padded container */
+}
+
+/* Activity Card */
+.activity-card {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  border-radius: 8px;
+  background-color: #f5f7fa;
+  margin-bottom: 10px;
+  border-left: 4px solid transparent;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.activity-card:hover {
+  background-color: #f0f0f0;
+  transform: translateY(-1px);
+}
+
+.activity-card.active {
+  border-left-color: #00be5f;
+  background-color: #e3f7eb;
+}
+
+.activity-time {
+  width: 60px;
+  color: #00be5f;
+  font-weight: 600;
+  font-size: 10px;
+}
+
+.activity-details {
+  flex: 1;
+}
+
+.activity-title {
+  margin: 0 0 4px 0;
+  font-size: 10px;
+  font-weight: 600;
+  color: #333;
+}
+
+.activity-description {
+  margin: 0;
+  font-size: 9px;
+  color: #666;
+}
+
+.panel-header {
+  margin-bottom: 2rem;
+}
+
+.date-display {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.date-display h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: white;
+}
+
+.calendar-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: background-color 0.2s;
+}
+
+.calendar-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.calendar-button svg {
+  width: 20px;
+  height: 20px;
+  color: white;
+}
+
+/* Activities Section */
+.activities-section {
+  margin-bottom: 2rem;
+}
+
+.activity-header {
+  margin-bottom: 1rem;
+}
+
+.activity-header h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.activity-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Upcoming Section */
+.upcoming-section {
+  margin-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 1.5rem;
+}
+
+.upcoming-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.upcoming-header h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.view-all-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 10px;
+  color: #00be5f;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.view-all-button:hover {
+  background-color: rgba(0, 190, 95, 0.1);
+}
+
+.upcoming-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Right panel specific activity card styles */
+.appointments-panel .activity-card {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-left: none;
+  border-radius: 8px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.appointments-panel .activity-card:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.appointments-panel .activity-card.active {
+  background-color: rgba(0, 190, 95, 0.15);
+  border-left: none;
+  position: relative;
+}
+
+.appointments-panel .activity-card.active:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 4px;
+  background-color: #00be5f;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.appointments-panel .activity-time {
+  color: #00be5f;
+  font-size: 10px;
+}
+
+.appointments-panel .activity-title {
+  color: white;
+  font-size: 10px;
+}
+
+.appointments-panel .activity-description {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 9px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+  .conversations-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  .appointments-panel {
+    display: none;
+  }
+  
+  .chat-page-content {
+    flex-direction: column;
+  }
+  
+  .sidebar {
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+  }
+  
+  .conversations-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.loading-spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #f3f3f3;
+  border-top: 2px solid #45B54C;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.send-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.chat-input-field:disabled {
+  background-color: rgba(239, 239, 239, 0.3);
+  cursor: not-allowed;
+}
+
+.streamlit-container {
+  display: none;
+}
+
+.streamlit-frame {
+  display: none;
+}
+
+.fullheight {
+  height: 100%;
+  overflow: hidden;
+}
+
+.chat-content {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Chat body layout for the 2-column chat view */
+.chat-body {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* Recent Chats Styles */
+.recent-chats {
+  width: 300px;
+  border-right: 1px solid #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  flex-shrink: 0;
+}
+
+.recent-chats-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.recent-chats-header h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+  color: #333;
+}
+
+.chat-list {
+  padding: 0.5rem 0;
+  overflow-y: auto;
+}
+
+.chat-preview {
+  display: flex;
+  padding: 12px 16px;
+  border-bottom: 1px solid #f0f0f0;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.chat-preview:hover {
+  background-color: #f8f8f8;
+}
+
+.chat-preview.unread {
+  background-color: #f0f7ff;
+}
+
+.chat-icon {
+  margin-right: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background-color: #e0e0e0;
+  border-radius: 50%;
+  color: #555;
+}
+
+.chat-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.chat-preview-content {
+  flex: 1;
+  min-width: 0; /* Ensure text truncation works */
+}
+
+.chat-preview-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.chat-title {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0;
+  color: #333;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.chat-time {
+  font-size: 11px;
+  color: #888;
+  white-space: nowrap;
+}
+
+.chat-last-message {
+  font-size: 12px;
+  color: #666;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  line-height: 1.4;
+}
+
+/* Chat Main Area - messages and input */
+.chat-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Remove old/unused styles */
+.search-container, /* Old Search Bar */
+.chat-body, /* Old 2-column layout */
+.recent-chats, /* Old recent chats column */
+.messages-container, /* Old message list */
+.message, .user-message, .ai-message, /* Old message bubbles */
+.chat-input-area, /* Old chat input */
+.chat-list, /* Old chat list in recent */
+.chat-preview, /* Old chat preview card */
+.chat-icon, /* Old chat icon */
+.chat-preview-content, 
+.chat-preview-header,
+.chat-title, 
+.chat-time, 
+.chat-last-message,
+.recent-chats-header,
+.send-button,
+.chat-input-field /* Ensure old input field styles are gone */
+{
+  display: none !important; /* Use important to override specificity if needed */
+} 
