@@ -1,0 +1,63 @@
+.bg-primary{
+    background-color: #004f62;
+}
+.bg-secondary{
+    background-color:#C4C4C4;
+}
+.text-red{
+    color: #FF2727;
+}
+.font-primary{
+    font-family: Montserrat;
+}
+.text-primary{
+    color: #18A0FB;
+}
+.btn-primary{
+    background-color: #18A0FB;
+}
+.btn-primary:hover{
+    background-color: #1295ec;
+}
+[data-column-id="provider_type"].rdt_TableCol {
+    justify-content: flex-start;
+}
+[data-column-id="clinics"].rdt_TableCol {
+    justify-content: flex-start;
+}
+[role="columnheader"] span{
+    opacity: 1;
+}
+
+@media screen and (max-width: 1280px) {
+    .select-font-size{
+        font-size: 12px;
+    }
+}
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+
+.custom-track {
+    background: white;
+    border: 1px solid #ccc;
+  }
+  
+  .custom-track:first-child {
+    background: white; /* Left of selection */
+  }
+  
+  .custom-track:nth-child(2) {
+    background: #006e9e;
+  }
+  
+  .custom-track:last-child {
+    background: white;
+  }
+

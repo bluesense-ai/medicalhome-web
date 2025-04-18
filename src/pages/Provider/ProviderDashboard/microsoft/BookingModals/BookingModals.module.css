@@ -1,0 +1,369 @@
+html,
+body {
+  font-family: "Segoe UI", "Segoe UI Web (West European)", "Segoe UI",
+    -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+}
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  width: 50%;
+  border-radius: 0.5rem;
+  outline: none;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+.modalSmall {
+  width: 30%;
+}
+
+.modalDialog {
+  padding: 20px;
+}
+
+.modalContent {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 18px;
+}
+
+.heading {
+  margin: 15px 5px;
+}
+.dateText {
+  font-size: 14px;
+  color: #555;
+  margin-top: 5px;
+}
+
+.serviceSelect {
+  width: 300px;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #333;
+}
+
+.modalBody {
+  padding: 5px;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.leftColumn,
+.rightColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.formGroup {
+  margin-bottom: 8px;
+}
+
+.formGroup label {
+  display: block;
+  font-size: 12px;
+  font-weight: 400;
+}
+.formGroupRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.halfWidth {
+  width: calc(50% - 5px);
+}
+
+.formGroup select,
+.formGroup textarea,
+/* .formGroup input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  height: 35px;
+  box-sizing: border-box;
+} */
+.formGroup textarea {
+  height: 50px;
+}
+
+.checkboxLabel {
+  display: flex !important;
+  align-items: center;
+}
+
+/* .checkboxInput {
+  width: 20px !important;
+  height: 20px !important;
+  margin-right: 8px;
+} */
+
+.formGroup input[readonly],
+/* .formGroup :disabled {
+  background-color: #dddddd;
+  color: #666;
+  cursor: not-allowed;
+  border: 1px solid #ccc;
+} */
+
+.buttonContainer {
+  display: flex;
+  align-items: center;
+}
+/* .modalFooter {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 15px;
+  border-top: 1px solid #ddd;
+} */
+
+.cancelButton {
+  background-color: #fff;
+  color: black;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.3s ease;
+  margin-right: 15px;
+  margin-right: auto;
+}
+
+.cancelButton i {
+  font-size: 16px;
+  margin-right: 4px;
+}
+.cancelButton:hover {
+  background-color: #ccc;
+}
+
+.btnSecondary {
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.btnSecondary:hover {
+  background-color: #5a6268;
+}
+
+.btnPrimary {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.btnPrimary:hover {
+  background-color: #0056b3;
+}
+
+.staffProfiles {
+  display: flex;
+  flex-direction: column; /* Changed from row to column */
+  align-items: flex-start; /* Align items to the start of the column */
+}
+
+.staffProfile {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px; /* Adjusted margin for vertical spacing */
+}
+
+.staffCircle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #0078d4; /* Background color */
+  color: white; /* Text color */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.moreOptionsButton {
+  background: none;
+  border: none;
+  color: #007bff;
+  cursor: pointer;
+  text-decoration: underline;
+  font-size: 14px;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.moreOptionsButton:hover {
+  color: #0056b3;
+}
+.eventDropdownOption {
+  background-color: #fff;
+  color: #0056b3;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 15px; /* Make buttons smaller */
+  cursor: pointer;
+  display: inline-flex; /* Inline to keep them on one line */
+  align-items: center;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+  font-size: 14px; /* Smaller text */
+  margin-right: 8px; /* Space between buttons */
+}
+.eventDropdownOption:hover {
+  background-color: #ccc;
+}
+.eventDropdownOption i {
+  font-size: 14px; /* Smaller icons */
+  margin-right: 4px;
+}
+
+.popupModalFooter {
+  display: flex;
+  flex-wrap: nowrap; /* Prevents wrapping to next line */
+  justify-content: flex-start; /* Aligns items in a single line */
+  padding: 10px 0; /* Adjust padding if needed */
+}
+
+.popupModalBody {
+  padding: 0px 20px; /* Adjust padding for the body */
+}
+.popupModalDialog {
+  padding: 15px 10px;
+}
+
+.popupModalHeader {
+  display: flex;
+  justify-content: space-between; /* Ensure items are spaced out */
+  align-items: center; /* Vertically center items */
+  padding: 10px;
+  padding-bottom: 5px;
+  position: relative; /* Position relative to manage the button position */
+}
+
+.popupModalHeader .heading {
+  margin: 0; /* Remove margins from heading */
+}
+
+.popupModalHeader .dateText {
+  font-size: 14px;
+  color: #555;
+  margin-top: 5px; /* Spacing between the heading and date */
+  display: block; /* Ensure date takes up its own line */
+}
+
+.popupModalHeader .close {
+  position: absolute; /* Position it absolutely to the top right */
+  top: 0;
+  right: 10px;
+}
+.popupModalBody {
+  padding: 5px 15px;
+}
+
+.staffContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Adjust space between staff members */
+}
+
+.staffProfile {
+  display: flex;
+  align-items: center;
+  gap: 5px; /* Adjust space between circle and name */
+}
+
+.staffCircleSmall {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: #333;
+}
+
+@media screen and (max-width: 1380px) {
+  .modalSmall {
+    width: 40%;
+  }
+}
+@media screen and (max-width: 1050px) {
+  .modal {
+    width: 98%;
+  }
+  .modalSmall {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 850px) {
+  .modalSmall {
+    width: 60%;
+  }
+}
+@media screen and (max-width: 680px) {
+  .modalSmall {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .modal {
+    width: 100%;
+  }
+  .modalSmall {
+    width: 98%;
+  }
+}

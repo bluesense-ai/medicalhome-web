@@ -1,0 +1,24 @@
+variables:
+  GIT_STRATEGY: fetch
+  GIT_DEPTH: 1
+  CI_JOB_TOKEN: $CI_JOB_TOKEN
+stages:
+  - deploy
+
+deploy_job:
+  stage: deploy
+  tags:
+    - linux
+  
+  before_script:
+    - 'touch ~/.git-credentials'
+    - echo "https://${GITLAB_USER}:${CI_JOB_TOKEN}@git.pgrninc.com/pacmc/medicalhome-ai.git" > ~/.git-credentials
+
+  script:
+    - eval $(ssh-agent -s)
+    - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+    - ssh -v -o StrictHostKeyChecking=no pgrnadmin@10.10.130.68 -i /home/gitlab-runner/.ssh/sandbox-ai.medicalhome.cloud "cd /var/www/medicalhome-ai && git fetch && git reset --hard origin/sandbox && git clean -df && npm install && npm run build && sudo systemctl restart nginx && exit"  
+
+
+  only:
+    - sandbox

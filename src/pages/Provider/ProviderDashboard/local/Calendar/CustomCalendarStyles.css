@@ -1,0 +1,136 @@
+/* GLOBAL STYLES AFFECTING TWO VIEWS*/
+
+/* Style applied to top left of entire calendar */
+.rbc-time-view {
+  border-radius: 8px;
+  border-style: solid;
+  border-width: 0.5px;
+  border-color: #3499d6;
+}
+
+/* Style for current day block and its background */
+.rbc-today {
+  /* Important to override style attribute for an element */
+  background-color: rgba(52, 153, 214, 0.25) !important;
+}
+
+/* Style for current time in day and week view  */
+.rbc-current-time-indicator {
+  background-color: rgba(91, 229, 72, 0.75);
+  height: 4px;
+}
+
+/* Style for slots within a block, day and week view */
+.rbc-day-slot .rbc-time-slot {
+  border-top: none;
+}
+
+/* Style for All-day block in day and week view  */
+div.rbc-label.rbc-time-header-gutter {
+  background-color: #f2f8ff;
+  border-top-left-radius: 8px;
+  border-style: solid;
+  border-width: 0.5px;
+  border-color: #3499d6;
+}
+
+/* Style for event content being overrided day and week view */
+.rbc-event-label {
+  display: none;
+}
+
+.rbc-time-header-content {
+  border-left: none;
+}
+
+/* Style for all day time block day and week view */
+div.rbc-time-header.rbc-overflowing {
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+  border-style: solid;
+  border-width: 0.5px;
+  border-color: #3499d6;
+}
+/* Style affecting all day time block */
+.rbc-time-content {
+  border-top: rgba(52, 153, 214, 0.25);
+}
+
+/* Style for time gutter on left for day and week view */
+.rbc-time-view .rbc-time-gutter {
+  font-size: 0.75rem;
+  font-weight: 600;
+  font-family: "Roboto";
+  line-height: 1.25;
+  letter-spacing: -0.05em;
+  background-color: #f2f8ff;
+}
+/* Style for timeslot day and week view */
+.rbc-timeslot-group {
+  min-height: 115.25px;
+  justify-content: center;
+  align-items: center;
+  flex-flow: nowrap;
+  width: auto;
+  padding: 20px;
+  color: #004f62;
+  border-width: 1px;
+  border-color: rgba(52, 153, 214, 0.25);
+}
+
+/* STYLES FOR MONTH VIEW */
+.rbc-month-view {
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+  border-color: #3499d6;
+  border-width: 0.5px;
+}
+
+/* .rbc-month-view .rbc-month-row {
+  height: 10px;
+} */
+
+.rbc-month-header {
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+  border-width: 0.5px;
+  display: flex;
+  height: 60px;
+  background-color: #f2f8ff;
+  color: #004f62;
+}
+
+.rbc-month-header .rbc-header {
+  color: #004f62;
+  padding-top: 8px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  font-family: "Roboto";
+  line-height: 2;
+  letter-spacing: 0.05em;
+}
+
+.rbc-month-view .rbc-date-cell {
+  text-align: left;
+  margin-left: 5px;
+  color: #004f62;
+  font-size: 0.875rem;
+  font-weight: 600;
+  font-family: "Roboto", sans-serif;
+  text-transform: capitalize;
+  line-height: 1.5;
+  letter-spacing: -0.01562em;
+}
+
+div.rbc-day-bg {
+  background-color: #f2f8ff;
+  border: 1px solid rgba(52, 153, 214, 0.25);
+}
+
+div.rbc-day-bg.rbc-off-range-bg {
+  height: 100vh !important;
+  background-color: #d9d9d9 !important;
+  color: #f7f7f7 !important;
+}
+
+/* Apply specific widths to each overlapping event based on its position */
